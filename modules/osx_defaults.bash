@@ -42,9 +42,6 @@ defaults write NSGlobalDomain AppleLocale -string "ru_RU@currency=RUB"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# Accelerate cursor
-defaults write NSGlobalDomain KeyRepeat -int 0
-
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
@@ -60,13 +57,13 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Finder: show all filename extensions
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
-defaults write com.apple.finder ShowStatusBar -bool true
+# defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
-defaults write com.apple.finder ShowPathbar -bool true
+# defaults write com.apple.finder ShowPathbar -bool true
 
 # Display full POSIX path as Finder window title
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -105,15 +102,15 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 defaults write com.apple.dock persistent-apps -array
 
 # Add applications to Dock
-for app in \
-  System\ Preferences \
-  Safari \
-  Slack \
-  iTerm \
-  Sublime\ Text
-do
-  defaults write com.apple.dock "persistent-apps" -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/$app.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-done
+# for app in \
+#   System\ Preferences \
+#   Safari \
+#   Slack \
+#   iTerm \
+#   Sublime\ Text
+# do
+#   defaults write com.apple.dock "persistent-apps" -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/$app.app/</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
+# done
 
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
@@ -125,20 +122,20 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 defaults write com.apple.dock mru-spaces -bool false
 
 # Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
+# defaults write com.apple.dock showhidden -bool true
 
 # Turn off dock icons magnification
-defaults write com.apple.dock magnification -boolean false
+# defaults write com.apple.dock magnification -boolean false
 
 # Show dock on right
-defaults write com.apple.dock orientation -string 'right'
+# defaults write com.apple.dock orientation -string 'right'
 
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 
 # Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+# defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
@@ -167,7 +164,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 # Change indexing order and disable some file types
 defaults write com.apple.spotlight orderedItems -array \
